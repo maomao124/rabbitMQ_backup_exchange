@@ -1,0 +1,53 @@
+2022-04-25 14:38:50.209  INFO 16324 --- [main] m.r.RabbitMqBackupExchangeApplication    : Starting RabbitMqBackupExchangeApplication v0.0.1-SNAPSHOT using Java 16.0.2 on mao with PID 16324 (H:\程序\大三下期\rabbitMQ备份交换机\target\rabbitMQ_backup_exchange-0.0.1-SNAPSHOT.jar started by mao in H:\程序\大三下期\rabbitMQ备份交换机\target)
+2022-04-25 14:38:50.212 DEBUG 16324 --- [main] m.r.RabbitMqBackupExchangeApplication    : Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-04-25 14:38:50.213  INFO 16324 --- [main] m.r.RabbitMqBackupExchangeApplication    : The following 1 profile is active: "dev"
+2022-04-25 14:38:51.398  INFO 16324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-25 14:38:51.409  INFO 16324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 14:38:51.410  INFO 16324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-04-25 14:38:51.499  INFO 16324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 14:38:51.499  INFO 16324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1230 ms
+2022-04-25 14:38:52.274  INFO 16324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-25 14:38:52.277  INFO 16324 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2022-04-25 14:38:52.375  INFO 16324 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6f2cb653:0/SimpleConnection@750fe12e [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56475]
+2022-04-25 14:38:52.382  INFO 16324 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (backup_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:38:52.383  INFO 16324 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (confirm_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:38:52.384  INFO 16324 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (backup_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:38:52.384  INFO 16324 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (warning_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:38:52.384  INFO 16324 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (confirm_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:38:52.471  INFO 16324 --- [main] m.r.RabbitMqBackupExchangeApplication    : Started RabbitMqBackupExchangeApplication in 2.836 seconds (JVM running for 3.266)
+2022-04-25 14:38:59.328  INFO 16324 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 14:38:59.328  INFO 16324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 14:38:59.330  INFO 16324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-25 14:38:59.366  INFO 16324 --- [http-nio-8080-exec-1] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:38:59.391  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:38:59.393  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：083f96ab-1368-4aa4-afae-064162f76847
+2022-04-25 14:39:00.148  INFO 16324 --- [http-nio-8080-exec-2] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:00.151  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：11ea0bac-871c-4f02-baa2-4ce585f74e4b
+2022-04-25 14:39:00.151  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:00.520  INFO 16324 --- [http-nio-8080-exec-3] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:00.526  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:00.526  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：38cfc969-ca68-42a3-914c-b47df3ca07ba
+2022-04-25 14:39:00.710  INFO 16324 --- [http-nio-8080-exec-4] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:00.713  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：9b544ccb-4cbb-419d-b3f2-d260dae3dca7
+2022-04-25 14:39:00.713  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:00.881  INFO 16324 --- [http-nio-8080-exec-5] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:00.887  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:00.887  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：96da0fa3-7e75-431d-a617-28c9cc811f0f
+2022-04-25 14:39:01.038  INFO 16324 --- [http-nio-8080-exec-6] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:01.045  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：07c7d8a5-ed7d-40db-a2f2-e2b50f2ca8fb
+2022-04-25 14:39:01.045  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:01.202  INFO 16324 --- [http-nio-8080-exec-7] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:01.204  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:01.204  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：42ffc634-4821-4a26-a021-f1de560f1efd
+2022-04-25 14:39:01.357  INFO 16324 --- [http-nio-8080-exec-8] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:01.360  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:01.360  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：6a048cce-893d-436a-9566-f3f3bc3f4f09
+2022-04-25 14:39:01.521  INFO 16324 --- [http-nio-8080-exec-9] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:01.524  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:01.524  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：7bcf87b0-17e9-405b-a73a-8a52e909e79b
+2022-04-25 14:39:01.675  INFO 16324 --- [http-nio-8080-exec-10] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:01.677  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:01.677  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：21358670-ba04-4792-aa62-9cd60d559a47
+2022-04-25 14:39:01.829  INFO 16324 --- [http-nio-8080-exec-1] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:39:01.833  INFO 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:39:01.833  WARN 16324 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：cde8c3a1-d7ab-4849-a1e3-f57d460495a7
