@@ -1,0 +1,17 @@
+2022-04-25 14:36:43.485  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:36:43.485  WARN 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：0a15a2ce-e3f2-40fa-98fa-1a9db2afded6
+2022-04-25 14:36:43.646  INFO 16848 --- [http-nio-8080-exec-8] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:36:43.648  WARN 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：5e3df48e-d26a-4215-a107-2e2d73070081
+2022-04-25 14:36:43.648  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:36:43.797  INFO 16848 --- [http-nio-8080-exec-9] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:36:43.798  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:36:43.798  WARN 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：9cdb8536-8771-4894-bddd-8e007e14b858
+2022-04-25 14:37:10.383  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:37:10.384  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:37:10.384  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:37:11.071  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:37:11.071  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:37:11.219  INFO 16848 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:37:11.248  INFO 16848 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:37:11.248  INFO 16848 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:37:11.248  INFO 16848 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped

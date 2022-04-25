@@ -1,0 +1,87 @@
+2022-04-25 14:31:57.510  INFO 14096 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (confirm_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:31:57.553  INFO 14096 --- [main] m.r.RabbitMqBackupExchangeApplication    : Started RabbitMqBackupExchangeApplication in 1.574 seconds (JVM running for 2.069)
+2022-04-25 14:32:01.398  INFO 14096 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 14:32:01.399  INFO 14096 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 14:32:01.399  INFO 14096 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-04-25 14:32:01.424  INFO 14096 --- [http-nio-8080-exec-1] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:32:01.444  INFO 14096 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:32:01.444  WARN 14096 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：CorrelationData [id=hello]
+2022-04-25 14:33:12.259  INFO 14096 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:33:12.260  INFO 14096 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:33:13.193  INFO 14096 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:33:13.193  INFO 14096 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:33:13.226  INFO 14096 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:33:13.227  INFO 14096 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:33:16.448  INFO 4032 --- [main] m.r.RabbitMqBackupExchangeApplication    : Starting RabbitMqBackupExchangeApplication using Java 16.0.2 on mao with PID 4032 (H:\程序\大三下期\rabbitMQ备份交换机\target\classes started by mao in H:\程序\大三下期\rabbitMQ备份交换机)
+2022-04-25 14:33:16.451 DEBUG 4032 --- [main] m.r.RabbitMqBackupExchangeApplication    : Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-04-25 14:33:16.451  INFO 4032 --- [main] m.r.RabbitMqBackupExchangeApplication    : The following 1 profile is active: "dev"
+2022-04-25 14:33:17.090  INFO 4032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-25 14:33:17.097  INFO 4032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 14:33:17.097  INFO 4032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-04-25 14:33:17.170  INFO 4032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 14:33:17.171  INFO 4032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 684 ms
+2022-04-25 14:33:17.636  INFO 4032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-25 14:33:17.637  INFO 4032 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2022-04-25 14:33:17.656  INFO 4032 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6f231ced:0/SimpleConnection@2001e48c [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56232]
+2022-04-25 14:33:17.659  INFO 4032 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (backup_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:33:17.660  INFO 4032 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (confirm_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:33:17.660  INFO 4032 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (backup_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:33:17.660  INFO 4032 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (warning_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:33:17.660  INFO 4032 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (confirm_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:33:17.700  INFO 4032 --- [main] m.r.RabbitMqBackupExchangeApplication    : Started RabbitMqBackupExchangeApplication in 1.592 seconds (JVM running for 2.07)
+2022-04-25 14:33:20.043  INFO 4032 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 14:33:20.043  INFO 4032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 14:33:20.044  INFO 4032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-25 14:33:20.065  INFO 4032 --- [http-nio-8080-exec-1] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:33:20.093  INFO 4032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:33:20.093  WARN 4032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：null
+2022-04-25 14:34:45.088  INFO 4032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:34:45.089  INFO 4032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:34:45.886  INFO 4032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:34:45.886  INFO 4032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:34:45.902  INFO 4032 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:34:45.903  INFO 4032 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:34:49.071  INFO 13112 --- [main] m.r.RabbitMqBackupExchangeApplication    : Starting RabbitMqBackupExchangeApplication using Java 16.0.2 on mao with PID 13112 (H:\程序\大三下期\rabbitMQ备份交换机\target\classes started by mao in H:\程序\大三下期\rabbitMQ备份交换机)
+2022-04-25 14:34:49.073 DEBUG 13112 --- [main] m.r.RabbitMqBackupExchangeApplication    : Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-04-25 14:34:49.073  INFO 13112 --- [main] m.r.RabbitMqBackupExchangeApplication    : The following 1 profile is active: "dev"
+2022-04-25 14:34:49.721  INFO 13112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-25 14:34:49.728  INFO 13112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 14:34:49.728  INFO 13112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-04-25 14:34:49.802  INFO 13112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 14:34:49.802  INFO 13112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 690 ms
+2022-04-25 14:34:50.254  INFO 13112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-25 14:34:50.255  INFO 13112 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2022-04-25 14:34:50.273  INFO 13112 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#71926a36:0/SimpleConnection@4b515eab [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56291]
+2022-04-25 14:34:50.276  INFO 13112 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (backup_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:34:50.276  INFO 13112 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (confirm_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:34:50.276  INFO 13112 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (backup_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:34:50.276  INFO 13112 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (warning_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:34:50.276  INFO 13112 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (confirm_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:34:50.316  INFO 13112 --- [main] m.r.RabbitMqBackupExchangeApplication    : Started RabbitMqBackupExchangeApplication in 1.572 seconds (JVM running for 2.011)
+2022-04-25 14:34:54.672  INFO 13112 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 14:34:54.672  INFO 13112 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 14:34:54.673  INFO 13112 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-25 14:34:54.692  INFO 13112 --- [http-nio-8080-exec-1] m.r.controller.MyController              : 开始发送消息：hello
+2022-04-25 14:34:54.713  INFO 13112 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 消费者2(备份)接收到消息：hello
+2022-04-25 14:34:54.713  WARN 13112 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] m.r.consumer.Consumer1                   : 发现不可路由信息：hello,uuid：f607b844-7970-4b1c-9d34-fff40c64c1e1
+2022-04-25 14:35:16.379  INFO 13112 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:35:16.380  INFO 13112 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-25 14:35:16.933  INFO 13112 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:35:16.933  INFO 13112 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-25 14:35:16.951  INFO 13112 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:35:16.951  INFO 13112 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-04-25 14:35:20.196  INFO 10856 --- [main] m.r.RabbitMqBackupExchangeApplication    : Starting RabbitMqBackupExchangeApplication using Java 16.0.2 on mao with PID 10856 (H:\程序\大三下期\rabbitMQ备份交换机\target\classes started by mao in H:\程序\大三下期\rabbitMQ备份交换机)
+2022-04-25 14:35:20.199 DEBUG 10856 --- [main] m.r.RabbitMqBackupExchangeApplication    : Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-04-25 14:35:20.199  INFO 10856 --- [main] m.r.RabbitMqBackupExchangeApplication    : The following 1 profile is active: "dev"
+2022-04-25 14:35:20.839  INFO 10856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-25 14:35:20.845  INFO 10856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 14:35:20.846  INFO 10856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-04-25 14:35:20.917  INFO 10856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 14:35:20.917  INFO 10856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 680 ms
+2022-04-25 14:35:21.371  INFO 10856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-25 14:35:21.373  INFO 10856 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2022-04-25 14:35:21.390  INFO 10856 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#71926a36:0/SimpleConnection@4b515eab [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56319]
+2022-04-25 14:35:21.393  INFO 10856 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (backup_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:35:21.393  INFO 10856 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (confirm_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-25 14:35:21.393  INFO 10856 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (backup_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-25 14:35:21.393  INFO 10856 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (warning_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
